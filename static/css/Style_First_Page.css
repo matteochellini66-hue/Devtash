@@ -1,0 +1,129 @@
+/* Reset iniziale dei margini del browser */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden; /* Previene lo scroll orizzontale */
+}
+
+/* Contenitore principale a due colonne affiancate */
+.main-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* --- SEZIONE AZZURRA (SINISTRA) --- */
+#blue-base {
+  background-color: #5ce6ff; 
+  width: 50vw;               
+  height: 100vh;             
+  display: flex;
+  justify-content: center;   
+  align-items: center;   
+  position: relative;    
+}
+
+#blue-item {
+  display: flex;
+  flex-direction: column;    
+  align-items: center;       
+  text-align: center;
+  gap: 20px;                 /* Gestisce lo spazio tra testo e bottone senza <br> */
+}
+
+#register-text {
+  color: white;
+}
+
+#Register-button {
+  background: white;
+  color: #5ce6ff;
+  border: none;
+  border-radius: 50px;
+  width: 25vw;               /* Ridotto leggermente per migliore proporzione */
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1rem, 2vw, 1.8rem); 
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.3s ease; /* Transizione fluida */
+}
+
+#Register-button:hover {
+  background: whitesmoke;
+}
+
+
+/* --- SEZIONE ROSSA/BIANCA (DESTRA) --- */
+#white-base {
+  background-color: white; 
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;   
+  align-items: center;       
+}
+
+#white-item {
+  display: flex;
+  flex-direction: column;    
+  align-items: center;       
+  text-align: center;
+  gap: 20px;                
+}
+
+#login-text {
+  color: #5ce6ff;              /* Impostato a bianco per leggibilità sul rosso */
+}
+
+#Login-button {
+  background: #5ce6ff;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  width: 25vw;               
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1rem, 2vw, 1.8rem); 
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+#Login-button:hover {
+  background: #48c4da;
+}
+
+/* Assicura che la div blu sia il punto di riferimento per il posizionamento */
+#blue-base {
+    position: relative; /* FONDAMENTALE: permette al footer di ancorarsi qui dentro */
+    /* mantieni qui le tue altre proprietà esistenti (width, background-color, ecc.) */
+}
+
+/* Stile del footer nell'angolo in basso a sinistra */
+.blue-footer {
+    position: absolute;
+    bottom: 15px;      /* Distanza dal bordo inferiore */
+    left: 20px;        /* Distanza dal bordo sinistro */
+    font-size: 0.85rem;/* Dimensione testo discreta */
+    color: #ffffff;    /* Colore testo (modifica in base alla tonalità di blu) */
+    z-index: 10;
+}
+
+/* Stile per il link della privacy policy nel footer */
+.blue-footer a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.blue-footer a:hover {
+    color: #e0e0e0;
+}

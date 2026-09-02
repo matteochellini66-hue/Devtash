@@ -1,0 +1,54 @@
+/* 1. Reset generale */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Il body usa Flexbox in colonna */
+body {
+    background-color: #5ce6ff;
+    display: flex;
+    flex-direction: column; /* Dispone Navbar in alto e Contenitore sotto */
+    min-height: 100vh;
+}
+
+/* 3. Stile Navbar */
+#navbar {
+    width: 100%;
+    z-index: 1000;
+}
+
+#logo {
+    height: 5vh;
+}
+
+#search-button {
+    border-color: #5ce6ff;
+    color: #5ce6ff;
+    margin-left: 5px;
+}
+
+#search-button:hover {
+    background: #5ce6ff;
+    color: white;
+}
+
+/* 4. Il box centrale */
+#container {
+    width: 45vw;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    
+    /* Centra il box nel resto dello spazio disponibile */
+    margin: auto; 
+}
+
+/* Correzione reattività per schermi piccoli */
+@media (max-width: 768px) {
+    #container {
+        width: 85vw;
+    }
+}

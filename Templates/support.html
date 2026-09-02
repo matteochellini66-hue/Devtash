@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">  
+        <link rel="icon" href="{{ url_for('static', filename='Elements/icon.png') }}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.rtl.min.css">
+        <link rel="stylesheet" href="{{url_for('static',filename='css/Support.css')}}">
+        <script src="{{url_for('static',filename='js/support.js')}}"></script>
+        <title>Supporta</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='Elements/icon.png') }}" alt="" id="logo"> Devtash</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="">
+                <ul class="navbar-nav  mb-2 mb-lg-0">
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="/create_page" target="_blank">Crea</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="/account" target="_blank">
+                        Account
+                    </a>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link" href="/support" target="_blank">Supportaci</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </nav>
+            <div id="container">
+                <button id="sup-btn" onclick="support()"><img src="{{ url_for('static', filename='Elements/images.png') }}" alt="" id="img"><strong>Support us on GitHub</strong></button>
+            </div>
+    </body>
+</html>

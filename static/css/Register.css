@@ -1,0 +1,34 @@
+/* 1. Reset e impostazione dello schermo */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Il body diventa il contenitore che centra tutto */
+body {
+    background-color: #5ce6ff;
+    display: flex;
+    justify-content: center; /* Centra in orizzontale */
+    align-items: center;     /* Centra in verticale */
+}
+
+/* 3. Il tuo box centrale */
+#container {
+    width: 45vw;
+    height: 55vh;
+    background-color: white;
+    
+    /* Disposizione interna del testo/elementi dentro il container */
+    display: flex;
+    flex-direction: column;   /* Mette gli elementi interni uno sotto l'altro */
+    justify-content: center; /* Centra i testi/pulsanti in verticale DENTRO il container */
+    
+    /* Abbellimenti facoltativi */
+    border-radius: 12px;
+    box-shadow: 0 0 25px white;
+}
+#checkbox{
+    margin-bottom: 5px;
+    margin-right: 5px;
+}

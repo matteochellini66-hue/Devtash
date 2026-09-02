@@ -1,0 +1,37 @@
+body{
+    background-color: #5ce6ff;
+    
+}
+#logo{
+    height: 5vh;
+}
+#sup-btn{
+    width: 25vw;
+    height: 10vh;
+    border: 0px;
+    color: black;
+    background-color: white;
+    border-radius: 3vh;
+    transition: 0.5s;
+    font-size: large;
+}
+#container{
+    display: flex;
+    justify-content: center; /* Centra in orizzontale */
+    align-items: center;     /* Centra in verticale */
+    min-height: 100vh;       /* Occupa tutta l'altezza dello schermo */
+    margin: 0;
+}
+#img{
+    height: 8vh;
+    margin-right: 5px;
+}
+#sup-btn:hover {
+    background-color: #f8f9fa;
+    transform: translateY(-3px); /* Effetto sollevamento */
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+}
+
+#sup-btn:active {
+    transform: translateY(-1px); /* Effetto pressione */
+}

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="{{ url_for('static', filename='Elements/icon.png') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/Account.css') }}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.rtl.min.css">
+        <script>
+            function confirmDelete(){
+                return confirm("Sei sicuro di voler eliminare definitivamente il tuo account? Tutti i tuoi snippet verranno rimossi.");
+            }
+        </script>
+        <title>Account - Devtash</title>
+    </head>
+    <body id="body" style="background-color: #5ce6ff;">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='Elements/icon.png') }}" alt="" id="logo"> Devtash</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" href="/Index">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/create_page" target="_blank">Crea</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/account">Account</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/support" target="_blank">Supportaci</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>       
+        
+        <h1 class="main-text text-center mt-4">Benvenuto, {{ name }}</h1>
+        
+        <div id="container" class="container mt-4 p-4 bg-white rounded shadow-sm">
+            <h3 class="mb-3">Stato di Cifratura dei tuoi Dati</h3>
+            <p class="text-muted">I tuoi dati personali sono memorizzati nel database in forma fortemente cifrata per la tua sicurezza (GDPR Compliant):</p>
+            
+            <div class="mb-3">
+                <strong>ID Utente:</strong> <code>{{ id }}</code>
+            </div>
+            
+            <div class="mb-3">
+                <strong>E-mail (Hash Unidirezionale SHA-256 nel DB):</strong>
+                <div class="p-2 bg-light border rounded mt-1 text-break" style="font-family: monospace; font-size: 0.9rem;">
+                    {{ email_hash }}
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <strong>Password (Hash Unidirezionale SHA-256 nel DB):</strong>
+                <div class="p-2 bg-light border rounded mt-1 text-break" style="font-family: monospace; font-size: 0.7rem;">
+                    {{ password_hash | truncate(145) }}
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <form action="/delete_account" method="post" onsubmit="return confirmDelete()">
+                <button id="del-btn" class="btn btn-danger">
+                    <strong>Elimina Account (Diritto all'Oblio)</strong>
+                </button>
+            </form>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

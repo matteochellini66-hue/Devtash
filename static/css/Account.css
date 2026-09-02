@@ -1,0 +1,77 @@
+/* 1. Reset generale */
+html, body {
+    min-height: 100vh;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* 2. Il body dispone la navbar in alto e il resto sotto */
+body {
+    background-color: #5ce6ff;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 3. Forzo la navbar in cima e a tutta larghezza */
+#navbar {
+    width: 100% !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+}
+
+/* 4. Il box centrale (usiamo margin: auto per centrarlo nel resto della pagina) */
+#container {
+    width: 50vw;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 0 25px white;
+    padding: 30px;
+    color: #5ce6ff;
+    /* Disposizione interna del testo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    /* Centra il box sia in verticale che in orizzontale sotto la navbar */
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: 60px;
+}
+
+@media (max-width: 768px) {
+    #container {
+        width: 85vw;
+    }
+}
+
+#logo {
+    height: 5vh;
+}
+
+.main-text {
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+}
+#del-btn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    /* Centra il box sia in verticale che in orizzontale sotto la navbar */
+    margin: auto; 
+    background-color: #cc0000;
+    color: white;
+    width: 20vw;
+    height: 6vh;
+    border:0px;
+    margin-bottom: 30px;
+    border-radius: 2vh;
+    transition: 0.5s;
+}
+#del-btn:hover{
+    background-color: #a00000;
+}
